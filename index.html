@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>George Gyebeng | Certified HR Professional</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --navy: #1a2744;
+    --navy-light: #243258;
+    --gold: #c8a04a;
+    --gold-light: #e8c97a;
+    --cream: #f9f7f3;
+    --white: #ffffff;
+    --text: #2c2c2a;
+    --muted: #5f5e5a;
+    --border: #e0dbd2;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    background: var(--cream);
+    line-height: 1.7;
+    font-size: 16px;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--navy);
+    border-bottom: 2px solid var(--gold);
+    padding: 0.75rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .nav-brand {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold);
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+  .nav-links { display: flex; gap: 1.5rem; }
+  .nav-links a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+
+  /* HERO */
+  .hero {
+    background: var(--navy);
+    color: #fff;
+    padding: 5rem 2rem 4rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    border: 40px solid rgba(200,160,74,0.08);
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; left: -40px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    border: 30px solid rgba(200,160,74,0.06);
+  }
+  .hero-initials {
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    background: var(--gold);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 26px; font-weight: 600;
+    color: var(--navy);
+    margin: 0 auto 1.5rem;
+    position: relative; z-index: 1;
+    box-shadow: 0 0 0 8px rgba(200,160,74,0.15);
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.6rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    margin-bottom: 0.4rem;
+    position: relative; z-index: 1;
+  }
+  .hero-title {
+    color: var(--gold);
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+    position: relative; z-index: 1;
+  }
+  .hero-tagline {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.72);
+    max-width: 520px;
+    margin: 0 auto 1.75rem;
+    position: relative; z-index: 1;
+  }
+  .badge-row {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    justify-content: center;
+    position: relative; z-index: 1;
+    margin-bottom: 2rem;
+  }
+  .badge {
+    background: rgba(200,160,74,0.15);
+    border: 0.5px solid var(--gold);
+    color: var(--gold);
+    font-size: 11px; font-weight: 500;
+    padding: 5px 14px;
+    border-radius: 20px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .hero-cta {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--navy);
+    font-weight: 500;
+    font-size: 0.9rem;
+    padding: 12px 32px;
+    border-radius: 6px;
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    position: relative; z-index: 1;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .hero-cta:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+  /* SECTIONS */
+  .section {
+    padding: 4rem 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .section-alt {
+    background: var(--white);
+  }
+  .section-alt .section { background: var(--white); }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+    border-bottom: 2.5px solid var(--gold);
+  }
+
+  .about-text {
+    margin-top: 1.5rem;
+    color: var(--muted);
+    font-size: 0.97rem;
+  }
+  .about-text p { margin-bottom: 1rem; }
+
+  .highlight-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+    margin-top: 2rem;
+  }
+  .highlight-card {
+    background: var(--cream);
+    border: 0.5px solid var(--border);
+    border-top: 3px solid var(--gold);
+    border-radius: 10px;
+    padding: 1rem 1.1rem;
+    text-align: center;
+  }
+  .highlight-card .num {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--navy);
+  }
+  .highlight-card .label {
+    font-size: 0.78rem;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-top: 0.2rem;
+  }
+
+  /* SERVICES */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px;
+    margin-top: 1.75rem;
+  }
+  .service-card {
+    background: var(--white);
+    border: 0.5px solid var(--border);
+    border-left: 3px solid var(--gold);
+    border-radius: 10px;
+    padding: 1.25rem 1.1rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .service-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(26,39,68,0.08); }
+  .service-icon {
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+    display: block;
+  }
+  .service-card h3 {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--navy);
+    margin-bottom: 0.4rem;
+  }
+  .service-card p {
+    font-size: 0.83rem;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+
+  /* EXPERIENCE */
+  .exp-list { margin-top: 1.75rem; display: flex; flex-direction: column; gap: 14px; }
+  .exp-card {
+    background: var(--white);
+    border: 0.5px solid var(--border);
+    border-radius: 10px;
+    padding: 1.25rem 1.25rem 1.25rem 1.5rem;
+    position: relative;
+  }
+  .exp-card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: var(--gold);
+    border-radius: 10px 0 0 10px;
+  }
+  .exp-meta {
+    font-size: 0.78rem;
+    color: var(--gold);
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+  }
+  .exp-card h3 { font-size: 0.97rem; font-weight: 500; color: var(--navy); margin-bottom: 0.4rem; }
+  .exp-card p { font-size: 0.84rem; color: var(--muted); line-height: 1.6; }
+
+  /* CONTACT */
+  .contact-wrapper {
+    background: var(--navy);
+    border-radius: 14px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    margin-top: 1.75rem;
+  }
+  .contact-wrapper p {
+    color: rgba(255,255,255,0.7);
+    font-size: 0.97rem;
+    max-width: 440px;
+    margin: 0 auto 1.75rem;
+  }
+  .contact-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  .contact-link {
+    display: inline-block;
+    padding: 12px 0;
+    width: 280px;
+    border-radius: 7px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    text-align: center;
+    transition: opacity 0.2s, transform 0.15s;
+  }
+  .contact-link:hover { opacity: 0.88; transform: translateY(-1px); }
+  .contact-link.email { background: var(--gold); color: var(--navy); }
+  .contact-link.linkedin { background: rgba(255,255,255,0.1); border: 0.5px solid rgba(255,255,255,0.25); color: #fff; }
+
+  /* FOOTER */
+  footer {
+    text-align: center;
+    padding: 1.75rem 2rem;
+    font-size: 0.78rem;
+    color: var(--muted);
+    border-top: 0.5px solid var(--border);
+  }
+
+  /* DIVIDER */
+  .divider { height: 0.5px; background: var(--border); }
+
+  /* RESPONSIVE */
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 1.9rem; }
+    .nav-links { display: none; }
+    .section { padding: 3rem 1.25rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-brand">George Gyebeng</div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-initials">GG</div>
+  <h1>George Gyebeng</h1>
+  <div class="hero-title">HRCI Certified HR Professional &nbsp;·&nbsp; Accra, Ghana</div>
+  <p class="hero-tagline">Helping organisations build compliant, people-first workplaces — from Accra to the world.</p>
+  <div class="badge-row">
+    <span class="badge">Employee Relations</span>
+    <span class="badge">HR Consulting</span>
+    <span class="badge">Recruitment</span>
+    <span class="badge">Labour Law</span>
+    <span class="badge">Remote-Ready</span>
+  </div>
+  <a href="#contact" class="hero-cta">Work With Me</a>
+</section>
+
+<!-- ABOUT -->
+<div id="about">
+  <div class="section">
+    <h2>About Me</h2>
+    <div class="about-text">
+      <p>I am George Gyebeng, a certified Human Resource professional (HRCI) with 3–5 years of hands-on experience in employee relations, HR consulting, and talent acquisition across Ghanaian and African workplace environments.</p>
+      <p>My work is grounded in a deep understanding of Ghana's Labour Act 651 and global HR best practices — a combination that gives me a unique edge in supporting organisations operating in or expanding into Africa.</p>
+      <p>I am available for remote HR consulting, advisory, and recruitment engagements with organisations worldwide. I bring discretion, thoroughness, and a genuine commitment to people-centred outcomes.</p>
+    </div>
+    <div class="highlight-row">
+      <div class="highlight-card">
+        <div class="num">3–5</div>
+        <div class="label">Years Experience</div>
+      </div>
+      <div class="highlight-card">
+        <div class="num">HRCI</div>
+        <div class="label">Certified</div>
+      </div>
+      <div class="highlight-card">
+        <div class="num">&#127758;</div>
+        <div class="label">Remote-Ready</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- SERVICES -->
+<div class="section-alt" id="services">
+  <div class="section">
+    <h2>Services</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="service-icon">&#9881;&#65039;</span>
+        <h3>Employee Relations Advisory</h3>
+        <p>Managing workplace conflicts, disciplinary processes, and grievance procedures with integrity and legal compliance.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">&#128203;</span>
+        <h3>HR Consulting</h3>
+        <p>Policy drafting, HR audits, employment documentation, and strategic people management guidance for growing teams.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">&#128269;</span>
+        <h3>Recruitment & Talent Acquisition</h3>
+        <p>End-to-end recruitment — from job profiling and sourcing to screening and onboarding support.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">&#9878;&#65039;</span>
+        <h3>Labour Law Guidance</h3>
+        <p>Expert advisory on Ghana's Labour Act 651 and African employment compliance for local and international clients.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- EXPERIENCE -->
+<div id="experience">
+  <div class="section">
+    <h2>Experience</h2>
+    <div class="exp-list">
+      <div class="exp-card">
+        <div class="exp-meta">HR & Administration &nbsp;·&nbsp; Koa Impact Ghana</div>
+        <h3>HR & Administrative Professional</h3>
+        <p>Managed employee relations, labour law compliance, internal communications, staff separations, incident investigations, and formal HR documentation across a dynamic impact-driven organisation.</p>
+      </div>
+      <div class="exp-card">
+        <div class="exp-meta">Freelance &nbsp;·&nbsp; Remote</div>
+        <h3>HR Consultant & Content Creator</h3>
+        <p>Providing independent HR advisory services to organisations and entrepreneurs. Founder of LetsTalkHR — an HR education brand focused on workplace rights and labour law literacy across Africa.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- CONTACT -->
+<div class="section-alt" id="contact">
+  <div class="section">
+    <h2>Contact</h2>
+    <div class="contact-wrapper">
+      <p>Available for remote HR consulting, recruitment mandates, and advisory engagements. Let's work together.</p>
+      <div class="contact-links">
+        <a class="contact-link email" href="mailto:gyebengg96@gmail.com">gyebengg96@gmail.com</a>
+        <a class="contact-link linkedin" href="https://www.linkedin.com/in/george-gyebeng" target="_blank">Connect on LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  &copy; 2026 George Gyebeng &nbsp;·&nbsp; HRCI Certified HR Professional &nbsp;·&nbsp; Accra, Ghana
+</footer>
+
+</body>
+</html>
